@@ -1,0 +1,14 @@
+services:
+  main:
+    image: python:3.12-slim
+    container_name: japan-holiday_main
+    platform: linux/x86_64
+    working_dir: /pythondocs
+    volumes:
+      - ../pythondocs:/pythondocs
+      - ./logs:/var/log/python
+    environment:
+      LANG: C.UTF-8
+      TZ: Asia/Tokyo
+      LOGGING_LEVEL: INFO
+    command: [ 'python', '-u', '-c', 'import main; main.main()' ]

@@ -1,7 +1,7 @@
 import csv
 import datetime
 
-from Holiday import Holiday
+from japanholiday.Holiday import Holiday
 
 holiday_years = {}
 

@@ -18,6 +18,7 @@ with open('syukujitsu.csv', newline='', encoding='sjis') as csvfile:
                 holidays[year] = []
             holidays[year].append(hol)
 
+
 def main():
     _holidays = get_holidays(2024)
     for h in _holidays:

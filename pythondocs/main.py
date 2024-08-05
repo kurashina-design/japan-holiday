@@ -1,11 +1,19 @@
 import csv
+from os import PathLike
 
 from japanholiday.JapanHoliday import JapanHoliday
 
 holidays = {}
 
-with open('syukujitsu.csv', newline='', encoding='sjis') as csvfile:
-    csv_reader = csv.reader(csvfile, delimiter=',', quotechar='|')
+
+_csv_file = 'syukujitsu.csv'
+
+def load(csv_file: PathLike[str] = None):
+    if csv_file:
+        _csv_file = csv_file
+
+with open(_csv_file, newline='', encoding='sjis') as csvfile:
+    csv_reader = csv.reader(csvfile, delimiter=',')
     for row in csv_reader:
         if row[0][0].isnumeric():
             date_source = row[0].split('/')

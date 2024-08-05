@@ -20,10 +20,8 @@ with open('syukujitsu.csv', newline='', encoding='sjis') as csvfile:
 
 
 def main():
-    _holidays = get_holidays(2024)
-    for h in _holidays:
-        print(f'year: {h.year}')
-
+    holiday = get_holiday(2024,8,11)
+    print(holiday)
 
 def get_holidays(year: int, month: int = None) -> list[JapanHoliday]:
     if not month:

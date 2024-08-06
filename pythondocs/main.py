@@ -32,6 +32,11 @@ def main():
     print(holiday)
 
 def get_holidays(year: int, month: int = None) -> list[JapanHoliday]:
+    '''
+    :param year: year
+    :param month: month
+    :return:
+    '''
     if not month:
         return holidays.get(year)
     else:
